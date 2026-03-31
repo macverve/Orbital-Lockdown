@@ -12,4 +12,9 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OptionsMenu()
+    {
+        SceneManager.LoadScene("OptionsScene");
+    }
 }
