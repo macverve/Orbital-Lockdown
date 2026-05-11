@@ -9,14 +9,26 @@ public class PlaySoundOnceOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TRIGGER HIT by: " + other.name);
+
         if (hasPlayed) return;
 
-        if (other.CompareTag(playerTag))
+        bool isPlayer =
+            other.CompareTag(playerTag) ||
+            other.transform.root.CompareTag(playerTag);
+
+        if (isPlayer)
         {
+            Debug.Log("PLAYER DETECTED - PLAY SOUND");
+
             if (audioSource != null)
             {
                 audioSource.Play();
                 hasPlayed = true;
+            }
+            else
+            {
+                Debug.LogError("AudioSource is missing in PlaySoundOnceOnTrigger");
             }
         }
     }
