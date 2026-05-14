@@ -38,6 +38,19 @@ MonoBehaviour:
   ambientProbeDimmer:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &-8369567473250963025
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: TestComponent2
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor.Tests:UnityEditor.Rendering.HighDefinition.Tests:CustomPostProcessComponentListTest/TestComponent2
+  active: 1
 --- !u!114 &-8113346238058132957
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1334,8 +1347,9 @@ MonoBehaviour:
   - {fileID: 7684081170885281594}
   - {fileID: -7759379092230437984}
   - {fileID: 4219559521787923105}
-  - {fileID: -7045119261280728301}
-  - {fileID: -1388868847025809772}
+  - {fileID: 5925184610645275586}
+  - {fileID: -8369567473250963025}
+  - {fileID: 8265424119380629068}
 --- !u!114 &415790555231159668
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2356,6 +2370,19 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &5925184610645275586
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: TestComponent
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor.Tests:UnityEditor.Rendering.HighDefinition.Tests:CustomPostProcessComponentListTest/TestComponent
+  active: 1
 --- !u!114 &6496987559721516211
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2800,5 +2827,36 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   customSeed:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &8265424119380629068
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5a4ca326696df448b83166ba7390ce, type: 3}
+  m_Name: BrutalFilmGrain
+  m_EditorClassIdentifier: Assembly-CSharp::BrutalFilmGrain
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.6
+  grainScale:
+    m_OverrideState: 1
+    m_Value: 2.5
+  speed:
+    m_OverrideState: 1
+    m_Value: 1.5
+  shadowBoost:
+    m_OverrideState: 1
+    m_Value: 1.75
+  contrast:
+    m_OverrideState: 1
+    m_Value: 1.8
+  colored:
     m_OverrideState: 1
     m_Value: 0

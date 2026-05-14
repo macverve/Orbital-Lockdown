@@ -196,7 +196,28 @@ MonoBehaviour:
       - rid: 8967611560044003611
       - rid: 8967611560044003612
     m_RuntimeSettings:
-      m_List: []
+      m_List:
+      - rid: 8967611560044003576
+      - rid: 8967611560044003577
+      - rid: 8967611560044003579
+      - rid: 8967611560044003580
+      - rid: 8967611560044003582
+      - rid: 8967611560044003583
+      - rid: 8967611560044003584
+      - rid: 8967611560044003587
+      - rid: 8967611560044003588
+      - rid: 8967611560044003589
+      - rid: 8967611560044003593
+      - rid: 8967611560044003595
+      - rid: 8967611560044003596
+      - rid: 8967611560044003601
+      - rid: 8967611560044003602
+      - rid: 8967611560044003603
+      - rid: 8967611560044003604
+      - rid: 8967611560044003606
+      - rid: 8967611560044003607
+      - rid: 8967611560044003609
+      - rid: 8967611560044003612
   renderingLayerNames:
   - Default
   lightLayerName0: 
@@ -488,7 +509,8 @@ MonoBehaviour:
           m_CustomPostProcessTypesAsString: []
         m_AfterPostProcessCustomPostProcesses:
           m_InjectionPoint: 2
-          m_CustomPostProcessTypesAsString: []
+          m_CustomPostProcessTypesAsString:
+          - BrutalFilmGrain, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     - rid: 8967611560044003583
       type: {class: RenderingPathFrameSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
