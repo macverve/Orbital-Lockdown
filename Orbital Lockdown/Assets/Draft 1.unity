@@ -992,6 +992,54 @@ Transform:
   - {fileID: 1804237942}
   m_Father: {fileID: 759094062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &33813945
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs/DefaultCompositionGraph
+  m_Shader: {fileID: -6465566751694194690, guid: a8b00506cdb2f5847a697211a7157f53, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - BaseLayer:
+        m_Texture: {fileID: 1446437532}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainLayer:
+        m_Texture: {fileID: 465134826}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &34391100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13242,7 +13290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 33eee41a10854473d8593d4fae78f6cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -72.12
+      value: -72.24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 33eee41a10854473d8593d4fae78f6cd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18155,7 +18203,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.703
+  m_Volume: 0.518
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18837,43 +18885,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413295560}
   m_Mesh: {fileID: 9057284774244213868, guid: 2c6e9893b2de0f3449a23239f6a7a7cc, type: 3}
---- !u!84 &417325798
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 1120
-  m_Height: 259
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &417392131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20155,6 +20166,43 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!84 &465134826
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 1120
+  m_Height: 345
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &471535018
 GameObject:
   m_ObjectHideFlags: 0
@@ -34974,7 +35022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10890952, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_Intensity
-      value: 159.15494
+      value: 79.57747
       objectReference: {fileID: 0}
     - target: {fileID: 10890952, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_LightUnit
@@ -36207,7 +36255,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.703
+  m_Volume: 0.501
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -36319,7 +36367,7 @@ Transform:
   m_GameObject: {fileID: 671430802}
   serializedVersion: 2
   m_LocalRotation: {x: -0.2855349, y: -0, z: -0, w: 0.95836836}
-  m_LocalPosition: {x: -3.99, y: -8.99, z: -37.14}
+  m_LocalPosition: {x: -3.99, y: -9.07, z: -37.14}
   m_LocalScale: {x: 11.85066, y: 1, z: 19.049097}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40515,7 +40563,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.721
+  m_Volume: 0.496
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -44572,7 +44620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10890952, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_Intensity
-      value: 397.88736
+      value: 79.57747
       objectReference: {fileID: 0}
     - target: {fileID: 10890952, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_LightUnit
@@ -49984,54 +50032,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3268759658677846798, guid: ddf0ec1d025ca4b47b663a2d38c0fee9, type: 3}
   m_PrefabInstance: {fileID: 1114169417}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1115322780
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs/DefaultCompositionGraph
-  m_Shader: {fileID: -6465566751694194690, guid: a8b00506cdb2f5847a697211a7157f53, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - BaseLayer:
-        m_Texture: {fileID: 1626065309}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainLayer:
-        m_Texture: {fileID: 417325798}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1119366596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51126,7 +51126,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.721
+  m_Volume: 0.496
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -51501,6 +51501,10 @@ PrefabInstance:
     - target: {fileID: 4048527710565352213, guid: d5611570368948f4ea5fbe5902f051f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833910412032098176, guid: d5611570368948f4ea5fbe5902f051f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.057
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62029,6 +62033,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4945479046051724033, guid: 251651ff918d5c144885a7d7c759adbe, type: 3}
   m_PrefabInstance: {fileID: 1446351067}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &1446437532
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 1120
+  m_Height: 345
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1447026954
 GameObject:
   m_ObjectHideFlags: 0
@@ -65620,7 +65661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490948, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 103.49
+      value: 104.47
       objectReference: {fileID: 0}
     - target: {fileID: 490948, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66748,43 +66789,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.7499995, y: 3.9399867, z: 0.5}
   m_Center: {x: -2.6250007, y: 1.969995, z: 0.5}
---- !u!84 &1626065309
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 1120
-  m_Height: 259
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &1632733828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72471,8 +72475,8 @@ Transform:
   m_GameObject: {fileID: 1815493209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7.040001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.61}
+  m_LocalScale: {x: 1, y: 1, z: 0.92911017}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1406246443}
@@ -76036,7 +76040,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.709
+  m_Volume: 0.489
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -80073,7 +80077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Compositor.CompositionManager
   m_Enable: 1
-  m_Material: {fileID: 1115322780}
+  m_Material: {fileID: 33813945}
   m_OutputDisplay: 0
   m_InputLayers:
   - m_LayerName: BaseLayer
@@ -80104,7 +80108,7 @@ MonoBehaviour:
     m_InputFilters: []
     m_AOVBitmask: 0
     m_AOVRenderTargets: []
-    m_RenderTarget: {fileID: 1626065309}
+    m_RenderTarget: {fileID: 1446437532}
     m_ClearsBackGround: 0
     m_Show: 1
     m_LayerCamera: {fileID: 0}
@@ -80172,7 +80176,7 @@ MonoBehaviour:
     m_InputFilters: []
     m_AOVBitmask: 0
     m_AOVRenderTargets: []
-    m_RenderTarget: {fileID: 417325798}
+    m_RenderTarget: {fileID: 465134826}
     m_ClearsBackGround: 0
     m_Show: 1
     m_LayerCamera: {fileID: 0}
