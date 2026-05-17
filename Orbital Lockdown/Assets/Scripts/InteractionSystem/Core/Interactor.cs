@@ -1,20 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
-    [SerializeField]
-    private float _castDistance = 5f;
-    [SerializeField]
-    private Vector3 _raycastOffset = new Vector3(0, 1f, 0);
+    [SerializeField] private float _castDistance = 5f;
+    [SerializeField] private Vector3 _raycastOffset = new Vector3(0, 1f, 0);
+    [SerializeField] private GameObject _InteractionUI;
 
-    [SerializeField]
-    private GameObject _InteractionUI;
-
+    private HashSet<string> _inventoryTokens = new HashSet<string>();
 
     private void Update()
     {
-
         if (DoInteractionTest(out IInteractable interactable))
         {
             if (interactable.CanInteract())
@@ -25,7 +22,6 @@ public class Interactor : MonoBehaviour
                 {
                     interactable.Interact(this);
                 }
-
             }
             else
             {
@@ -34,7 +30,6 @@ public class Interactor : MonoBehaviour
         }
         else
         {
-
             _InteractionUI.SetActive(false);
         }
     }
@@ -42,8 +37,8 @@ public class Interactor : MonoBehaviour
     private bool DoInteractionTest(out IInteractable interactable)
     {
         interactable = null;
-
         Ray ray = new Ray(transform.position + _raycastOffset, transform.forward);
+
         if (Physics.Raycast(ray, out RaycastHit hit, _castDistance))
         {
             interactable = hit.collider.GetComponent<IInteractable>();
@@ -52,7 +47,17 @@ public class Interactor : MonoBehaviour
                 return true;
             }
         }
-       
         return false;
+    }
+
+    public void AddToken(string tokenName)
+    {
+        _inventoryTokens.Add(tokenName);
+        Debug.Log($"Picked up key: {tokenName}");
+    }
+
+    public bool HasToken(string tokenName)
+    {
+        return _inventoryTokens.Contains(tokenName);
     }
 }
