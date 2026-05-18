@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+    public GameObject pauseSettingsPanel;
+    public AudioMixer audioMixer;
 
     private bool isPaused = false;
 
@@ -22,12 +25,38 @@ public class PauseMenuScript : MonoBehaviour
             }
         }
     }
+    
+
+    public void SetSoundVolume(float volume)
+    {
+        if (volume <= 0)
+        {
+            audioMixer.SetFloat("Volume", -80f);
+            return;
+        }
+
+        float convertedVolume = Mathf.Log10(volume / 100f) * 20f;
+        audioMixer.SetFloat("Volume", convertedVolume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        if (volume <= 0)
+        {
+            audioMixer.SetFloat("MusicVolume", -80f);
+            return;
+        }
+
+        float convertedVolume = Mathf.Log10(volume / 100f) * 20f;
+        audioMixer.SetFloat("MusicVolume", convertedVolume);
+    }
 
     public void PauseGame()
     {
         pauseMenuPanel.SetActive(true);
+        pauseSettingsPanel.SetActive(false);
+
         Time.timeScale = 0f;
-        AudioListener.pause = true;
         isPaused = true;
 
         Cursor.visible = true;
@@ -37,8 +66,9 @@ public class PauseMenuScript : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenuPanel.SetActive(false);
+        pauseSettingsPanel.SetActive(false);
+
         Time.timeScale = 1f;
-        AudioListener.pause = false;
         isPaused = false;
 
         Cursor.visible = false;
@@ -55,5 +85,17 @@ public class PauseMenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenPauseSettings()
+    {
+        pauseMenuPanel.SetActive(false);
+        pauseSettingsPanel.SetActive(true);
+    }
+
+    public void BackToPauseMenu()
+    {
+        pauseSettingsPanel.SetActive(false);
+        pauseMenuPanel.SetActive(true);
     }
 }
