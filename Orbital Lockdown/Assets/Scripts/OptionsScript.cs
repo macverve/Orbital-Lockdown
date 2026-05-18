@@ -12,6 +12,7 @@ public class OptionsScript : MonoBehaviour
 
     public void SetSoundVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        float convertedVolume = Mathf.Log10(volume / 100) * 20;
+        audioMixer.SetFloat("Volume", convertedVolume);
     }
 }
