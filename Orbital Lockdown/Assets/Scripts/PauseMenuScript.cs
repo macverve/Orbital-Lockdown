@@ -55,6 +55,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         pauseSettingsPanel.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         Time.timeScale = 0f;
         isPaused = true;
@@ -67,6 +69,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuPanel.SetActive(false);
         pauseSettingsPanel.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         Time.timeScale = 1f;
         isPaused = false;
@@ -79,6 +83,10 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioListener.pause = false;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         SceneManager.LoadScene("MainMenuScene");
     }
 
