@@ -8,6 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenuPanel;
     public GameObject pauseSettingsPanel;
     public AudioMixer audioMixer;
+    public GameObject tutorialHUDPanel;
 
     private bool isPaused = false;
 
@@ -58,6 +59,11 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+        if (tutorialHUDPanel != null)
+        {
+            tutorialHUDPanel.SetActive(false);
+        }
+
         Time.timeScale = 0f;
         isPaused = true;
 
@@ -71,6 +77,11 @@ public class PauseMenuScript : MonoBehaviour
         pauseSettingsPanel.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (tutorialHUDPanel != null)
+        {
+            tutorialHUDPanel.SetActive(true);
+        }
 
         Time.timeScale = 1f;
         isPaused = false;
