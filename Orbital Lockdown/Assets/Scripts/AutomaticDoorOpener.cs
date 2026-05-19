@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlidingDoorTrigger : MonoBehaviour
+public class AutomaticDoorOpener : MonoBehaviour
 {
     [Header("Door panels")]
     public Transform leftDoor;
@@ -27,13 +27,16 @@ public class SlidingDoorTrigger : MonoBehaviour
     public AudioClip openClip;
     public AudioClip closeClip;
 
+    [Header("Security Settings")]
+    [Tooltip("If true, the door sensors are offline until UnlockDoor() is triggered via the control board.")]
+    public bool isLocked = true;
+
     private Vector3 leftClosedPos;
     private Vector3 rightClosedPos;
     private Vector3 leftOpenPos;
     private Vector3 rightOpenPos;
 
     private bool shouldOpen = false;
-    private bool wasOpen = false;
 
     private HashSet<Transform> playersInside = new HashSet<Transform>();
 
@@ -97,6 +100,10 @@ public class SlidingDoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (isLocked)
+            return;
+
         Transform root = other.transform.root;
 
         if (!root.CompareTag(playerTag))
@@ -129,6 +136,13 @@ public class SlidingDoorTrigger : MonoBehaviour
             shouldOpen = false;
             PlayDoorCloseSound();
         }
+    }
+
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
+        Debug.Log($"[Security System] {gameObject.name} has been successfully unlocked!");
     }
 
     private void PlayDoorOpenSound()
