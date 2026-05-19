@@ -24,7 +24,7 @@ namespace OrbitalLockdown.PlayerControl
         private float _yawInput;
 
         private const float _walkSpeed = 2f;
-        private const float _runSpeed = 4f;
+        private const float _runSpeed = 6f;
 
         private Vector2 _currentVelocity;
 
