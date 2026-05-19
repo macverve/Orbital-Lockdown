@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/OptionsScene.unity
     guid: c55eb0b4898046540879cc6cad0fd865
-  - enabled: 1
+  - enabled: 0
     path: Assets/Draft 1.unity
     guid: b54794bbd7d8b044890030107a3971c6
+  - enabled: 1
+    path: Assets/Scenes/Draft with Interactions.unity
+    guid: 70138b5578cddf94293f8ec9c7fa5636
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
