@@ -8,6 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenuPanel;
     public GameObject pauseSettingsPanel;
     public AudioMixer audioMixer;
+    public GameObject tutorialHUDPanel;
 
     private bool isPaused = false;
 
@@ -55,6 +56,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         pauseSettingsPanel.SetActive(false);
+
+        if (tutorialHUDPanel != null)
+        {
+            tutorialHUDPanel.SetActive(false);
+        }
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -69,6 +76,12 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuPanel.SetActive(false);
         pauseSettingsPanel.SetActive(false);
+
+        if (tutorialHUDPanel != null)
+        {
+            tutorialHUDPanel.SetActive(true);
+        }   
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -105,5 +118,16 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseSettingsPanel.SetActive(false);
         pauseMenuPanel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
