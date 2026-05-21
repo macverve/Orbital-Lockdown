@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySoundWhenPickedUp : MonoBehaviour
+public class PlaySoundAndStartBlackout : MonoBehaviour
 {
     [Header("Pickup Sounds")]
     [SerializeField] private AudioClip[] pickupSounds;
@@ -26,12 +26,23 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
     [SerializeField] private Renderer[] renderersToDisableAfterSound;
     [SerializeField] private ParticleSystem[] particleSystemsToStopAfterSound;
 
+    [Header("Death Screen After Blackout")]
+    [SerializeField] private GameObject deathScreenObject;
+    [SerializeField] private float deathScreenDelayAfterBlackout = 60f;
+    [SerializeField] private bool pauseGameWhenDeathScreenAppears = true;
+    [SerializeField] private bool showCursorOnDeathScreen = true;
+
     private bool hasStarted;
     private bool hasPlayed;
 
     private void Start()
     {
         hasStarted = true;
+
+        if (deathScreenObject != null)
+        {
+            deathScreenObject.SetActive(false);
+        }
     }
 
     private void OnDisable()
@@ -60,10 +71,10 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
 
         hasPlayed = true;
 
-        GameObject soundObject = new GameObject("Pickup Sound And Blackout");
-        soundObject.transform.position = transform.position;
+        GameObject runnerObject = new GameObject("Pickup Sound And Blackout Runner");
+        runnerObject.transform.position = transform.position;
 
-        PickupSoundBlackoutRunner runner = soundObject.AddComponent<PickupSoundBlackoutRunner>();
+        PickupSoundBlackoutRunner runner = runnerObject.AddComponent<PickupSoundBlackoutRunner>();
 
         runner.StartSequence(
             clipsToPlay,
@@ -77,7 +88,11 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
             componentsToDisableAfterSound,
             objectsToDeactivateAfterSound,
             renderersToDisableAfterSound,
-            particleSystemsToStopAfterSound
+            particleSystemsToStopAfterSound,
+            deathScreenObject,
+            deathScreenDelayAfterBlackout,
+            pauseGameWhenDeathScreenAppears,
+            showCursorOnDeathScreen
         );
     }
 
@@ -191,7 +206,11 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
         Behaviour[] componentsToDisableAfterSound,
         GameObject[] objectsToDeactivateAfterSound,
         Renderer[] renderersToDisableAfterSound,
-        ParticleSystem[] particleSystemsToStopAfterSound
+        ParticleSystem[] particleSystemsToStopAfterSound,
+        GameObject deathScreenObject,
+        float deathScreenDelayAfterBlackout,
+        bool pauseGameWhenDeathScreenAppears,
+        bool showCursorOnDeathScreen
     )
     {
         List<AudioSource> audioSources = new List<AudioSource>();
@@ -222,7 +241,11 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
             componentsToDisableAfterSound,
             objectsToDeactivateAfterSound,
             renderersToDisableAfterSound,
-            particleSystemsToStopAfterSound
+            particleSystemsToStopAfterSound,
+            deathScreenObject,
+            deathScreenDelayAfterBlackout,
+            pauseGameWhenDeathScreenAppears,
+            showCursorOnDeathScreen
         ));
     }
 
@@ -236,7 +259,11 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
         Behaviour[] componentsToDisableAfterSound,
         GameObject[] objectsToDeactivateAfterSound,
         Renderer[] renderersToDisableAfterSound,
-        ParticleSystem[] particleSystemsToStopAfterSound
+        ParticleSystem[] particleSystemsToStopAfterSound,
+        GameObject deathScreenObject,
+        float deathScreenDelayAfterBlackout,
+        bool pauseGameWhenDeathScreenAppears,
+        bool showCursorOnDeathScreen
     )
     {
         if (waitForSoundToFinish)
@@ -296,11 +323,11 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
             }
         }
 
-        foreach (Renderer renderer in renderersToDisableAfterSound)
+        foreach (Renderer rendererToDisable in renderersToDisableAfterSound)
         {
-            if (renderer != null)
+            if (rendererToDisable != null)
             {
-                renderer.enabled = false;
+                rendererToDisable.enabled = false;
             }
         }
 
@@ -317,6 +344,24 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
             if (objectToDeactivate != null)
             {
                 objectToDeactivate.SetActive(false);
+            }
+        }
+
+        if (deathScreenObject != null)
+        {
+            yield return new WaitForSeconds(deathScreenDelayAfterBlackout);
+
+            deathScreenObject.SetActive(true);
+
+            if (showCursorOnDeathScreen)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+
+            if (pauseGameWhenDeathScreenAppears)
+            {
+                Time.timeScale = 0f;
             }
         }
 
