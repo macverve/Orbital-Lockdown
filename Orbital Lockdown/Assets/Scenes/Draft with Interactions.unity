@@ -41081,10 +41081,18 @@ PrefabInstance:
       propertyPath: playerRigidbody
       value: 
       objectReference: {fileID: 744230373}
+    - target: {fileID: 3521895073350540291, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: tutorialHUDScript
+      value: 
+      objectReference: {fileID: 1682428611}
     - target: {fileID: 4854674375837418667, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
       propertyPath: m_Name
       value: IntroManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7912119210460139680, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2547607529543860822, guid: c664f9fb4ed090a4f823d1cf0064032e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72069,6 +72077,10 @@ PrefabInstance:
       propertyPath: controlsOverlay
       value: 
       objectReference: {fileID: 2119029678}
+    - target: {fileID: 5462616636900656396, guid: b63fd747b169d164cb0150a0fe3611c0, type: 3}
+      propertyPath: tutorialHUDPanel
+      value: 
+      objectReference: {fileID: 2119029684}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72442,6 +72454,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 432754, guid: d9ba6e4a0b3764a1bb987416e9114f6d, type: 3}
   m_PrefabInstance: {fileID: 1790126277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682428611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5462616636900656396, guid: b63fd747b169d164cb0150a0fe3611c0, type: 3}
+  m_PrefabInstance: {fileID: 1673310987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c8ee3fcd4902a42901ba892deb9aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialHUDScript
 --- !u!1 &1683988506
 GameObject:
   m_ObjectHideFlags: 0
@@ -86361,6 +86384,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2802039447364306774, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4566949737393297133, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -86380,6 +86407,10 @@ PrefabInstance:
     - target: {fileID: 6996165029579141400, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110979934252386680, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7125634835681786170, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -86492,6 +86523,10 @@ PrefabInstance:
     - target: {fileID: 8593760624172898146, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866959106593794841, guid: 2303dcbe5fd495048844c35b5660e804, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
