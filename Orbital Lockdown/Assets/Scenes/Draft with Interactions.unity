@@ -40116,6 +40116,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flashlight
   _flashlightLight: {fileID: 1449184249}
+--- !u!114 &744230371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 343572056644564057, guid: 4889147f334bd494eb24d53ffa707862, type: 3}
+  m_PrefabInstance: {fileID: 1197595162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744230339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+--- !u!54 &744230373 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2722356274355358549, guid: 4889147f334bd494eb24d53ffa707862, type: 3}
+  m_PrefabInstance: {fileID: 1197595162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &744666083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41573,6 +41589,75 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 490479672}
   m_SourcePrefab: {fileID: 100100000, guid: 0c2642e071b134aa3bfb882521145afb, type: 3}
+--- !u!1001 &797644791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.559
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -48.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -320.60663
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974437226033356543, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521895073350540291, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 744230371}
+    - target: {fileID: 3521895073350540291, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: gameplayCamera
+      value: 
+      objectReference: {fileID: 1170465186}
+    - target: {fileID: 3521895073350540291, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: playerRigidbody
+      value: 
+      objectReference: {fileID: 744230373}
+    - target: {fileID: 4854674375837418667, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
+      propertyPath: m_Name
+      value: IntroManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4827c96d9e056f64cb4ecc48590afab7, type: 3}
 --- !u!1 &799678903
 GameObject:
   m_ObjectHideFlags: 0
@@ -88106,3 +88191,4 @@ SceneRoots:
   - {fileID: 1673310987}
   - {fileID: 1859673301}
   - {fileID: 221114863}
+  - {fileID: 797644791}
