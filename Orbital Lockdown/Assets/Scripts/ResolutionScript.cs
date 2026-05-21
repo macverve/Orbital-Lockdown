@@ -1,61 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SettingsResolution : MonoBehaviour
+public class ResolutionSettingsScript : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
 
     private Resolution[] resolutions;
-    private List<Resolution> filteredResolutions;
 
-    private float currentRefreshRate;
-    private int currentResolutionIndex = 0;
+    private const string ResolutionWidthKey = "ResolutionWidth";
+    private const string ResolutionHeightKey = "ResolutionHeight";
 
-    void Start()
+    private void Start()
     {
         resolutions = Screen.resolutions;
-        filteredResolutions = new List<Resolution>();
 
         resolutionDropdown.ClearOptions();
-        currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value;
+
+        int currentResolutionIndex = 0;
+        var options = new System.Collections.Generic.List<string>();
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            if ((float)resolutions[i].refreshRateRatio.value == currentRefreshRate) 
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+
+            if (!options.Contains(option))
             {
-                filteredResolutions.Add(resolutions[i]);
+                options.Add(option);
             }
-        }
 
-        filteredResolutions.Sort((a, b) => {
-            if (a.width != b.width)
-                return b.width.CompareTo(a.width);
-            else
-                return b.height.CompareTo(a.height);
-        });
-
-        List<string> options = new List<string>();
-        for (int i = 0; i < filteredResolutions.Count; i++)
-        {
-            string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height + " " + filteredResolutions[i].refreshRateRatio.value.ToString("0.##") + " Hz";
-            options.Add(resolutionOption);
-            if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height && (float)filteredResolutions[i].refreshRateRatio.value == currentRefreshRate)
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
             {
-                currentResolutionIndex = i;
+                currentResolutionIndex = options.IndexOf(option);
             }
         }
 
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex = 0;
+
+        int savedWidth = PlayerPrefs.GetInt(ResolutionWidthKey, Screen.currentResolution.width);
+        int savedHeight = PlayerPrefs.GetInt(ResolutionHeightKey, Screen.currentResolution.height);
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            if (options[i] == savedWidth + " x " + savedHeight)
+            {
+                currentResolutionIndex = i;
+                break;
+            }
+        }
+
+        resolutionDropdown.SetValueWithoutNotify(currentResolutionIndex);
         resolutionDropdown.RefreshShownValue();
-        SetResolution(currentResolutionIndex);
+
+        ApplyResolutionFromText(options[currentResolutionIndex]);
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = filteredResolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, true);
+        string selectedResolution = resolutionDropdown.options[resolutionIndex].text;
+        ApplyResolutionFromText(selectedResolution);
+    }
+
+    private void ApplyResolutionFromText(string resolutionText)
+    {
+        string[] parts = resolutionText.Split('x');
+
+        int width = int.Parse(parts[0].Trim());
+        int height = int.Parse(parts[1].Trim());
+
+        Screen.SetResolution(width, height, Screen.fullScreen);
+
+        PlayerPrefs.SetInt(ResolutionWidthKey, width);
+        PlayerPrefs.SetInt(ResolutionHeightKey, height);
+        PlayerPrefs.Save();
     }
 }

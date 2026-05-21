@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 1109341770}
   - component: {fileID: 1109341769}
   - component: {fileID: 1109341771}
+  - component: {fileID: 1109341772}
   m_Layer: 0
   m_Name: DisplaySettingsManager
   m_TagString: Untagged
@@ -908,6 +909,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrightnessSettingsScript
   globalVolume: {fileID: 832575518}
   brightnessSlider: {fileID: 7408096426456349584}
+--- !u!114 &1109341772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109341768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385f1b2e0d15fa446a576067eda6bd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResolutionSettingsScript
+  resolutionDropdown: {fileID: 7408096426456349585}
 --- !u!224 &1275545411 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7964669474297573831, guid: cd04bdf480ad14a448d913e11fca544c, type: 3}
@@ -1406,6 +1420,58 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AudioSettingsScript, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Text
+      value: 1280 x 720
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[3].m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1109341772}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ResolutionSettingsScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1620167080648459833, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1625,6 +1691,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &7408096426456349585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1614128707807616640, guid: 88259d912941e5b49aac1540e97cde50, type: 3}
+  m_PrefabInstance: {fileID: 7408096426456349582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
 --- !u!1001 &9157371462683632049
 PrefabInstance:
   m_ObjectHideFlags: 0
