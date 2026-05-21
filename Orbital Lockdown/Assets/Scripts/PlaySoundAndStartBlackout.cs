@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlaySoundWhenPickedUp : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
     [SerializeField] private float volume = 1f;
     [SerializeField] private bool playRandomSound = false;
     [SerializeField] private bool playAs3DSound = true;
+    [SerializeField] private AudioMixerGroup outputMixerGroup;
 
     [Header("Blackout Timing")]
     [SerializeField] private bool waitForSoundToFinish = true;
@@ -34,7 +36,7 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
         hasStarted = true;
     }
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         StartPickupSoundAndBlackout();
     }
@@ -42,9 +44,9 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
     private void OnDestroy()
     {
         StartPickupSoundAndBlackout();
-    }
+    }*/
 
-    private void StartPickupSoundAndBlackout()
+    public void StartPickupSoundAndBlackout()
     {
         if (!Application.isPlaying || !hasStarted || hasPlayed)
         {
@@ -69,6 +71,7 @@ public class PlaySoundWhenPickedUp : MonoBehaviour
             clipsToPlay,
             volume,
             playAs3DSound,
+            outputMixerGroup,
             waitForSoundToFinish,
             manualBlackoutDelayFromPickup,
             blackoutDelayAfterSound,
@@ -183,6 +186,7 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
         AudioClip[] clips,
         float volume,
         bool playAs3DSound,
+        AudioMixerGroup outputMixerGroup,
         bool waitForSoundToFinish,
         float manualBlackoutDelayFromPickup,
         float blackoutDelayAfterSound,
@@ -207,6 +211,7 @@ public class PickupSoundBlackoutRunner : MonoBehaviour
             audioSource.clip = clip;
             audioSource.volume = volume;
             audioSource.spatialBlend = playAs3DSound ? 1f : 0f;
+            audioSource.outputAudioMixerGroup = outputMixerGroup;
             audioSource.Play();
 
             audioSources.Add(audioSource);

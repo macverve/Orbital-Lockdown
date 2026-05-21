@@ -19,6 +19,13 @@ public class KeyPickupInteraction : MonoBehaviour, IInteractable
         // Tell the player they now hold this key identifier
         interactor.AddToken(_keyID);
 
+        PlaySoundWhenPickedUp pickupSound = GetComponent<PlaySoundWhenPickedUp>();
+
+        if (pickupSound != null)
+        {
+            pickupSound.StartPickupSoundAndBlackout();
+        }
+
         // Play pickup animation, then destroy the physical key object
         transform.DOMove(interactor.transform.position, _animationDuration)
             .OnComplete(() => Destroy(gameObject));
