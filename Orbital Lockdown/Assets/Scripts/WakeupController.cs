@@ -54,6 +54,9 @@ public class WakeupController : MonoBehaviour
     [SerializeField] private GameObject gameplayUI;
     [SerializeField] private bool logDebugMessages = true;
 
+    [Header("Tutorial HUD")]
+    [SerializeField] private TutorialHUDScript tutorialHUDScript;
+
     private AudioListener introAudioListener;
     private AudioListener gameplayAudioListener;
 
@@ -85,6 +88,11 @@ public class WakeupController : MonoBehaviour
         if (gameplayUI != null)
         {
             gameplayUI.SetActive(false);
+        }
+
+        if (tutorialHUDScript != null)
+        {
+            tutorialHUDScript.HideTutorialHUD();
         }
 
         introAudioListener = introCamera.GetComponent<AudioListener>();
@@ -152,6 +160,11 @@ public class WakeupController : MonoBehaviour
         if (gameplayUI != null)
         {
             gameplayUI.SetActive(true);
+        }
+
+        if (tutorialHUDScript != null)
+        {
+            tutorialHUDScript.ShowTutorialHUD();
         }
 
         EnablePlayerControl();

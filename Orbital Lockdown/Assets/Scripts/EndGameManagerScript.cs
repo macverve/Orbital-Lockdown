@@ -52,6 +52,15 @@ public class EndGameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        if (winAudioSource != null)
+        {
+            winAudioSource.Stop();
+        }
+
+        if (deathAudioSource != null)
+        {
+            deathAudioSource.Stop();
+        }
         Time.timeScale = 1f;
         AudioListener.pause = false;
 
